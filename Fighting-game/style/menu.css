@@ -1,0 +1,73 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin:0;
+    background: linear-gradient(#060000 ,rgb(114, 0, 0));
+    color: white;
+    font-family: 'M PLUS Rounded 1c', Avenir Next, Helvetica, sans-serif;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#flexbox-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+#menu{
+    display: flex;
+    margin-top:10% ;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    position: relative;
+}
+.menu-choices{
+    font-weight: bold;
+    font-size: 3.3rem;
+    margin: 40px;
+    cursor: pointer;
+    padding: 1px 3px 1px 3px;
+    color: white;
+    text-decoration: none; 
+}
+.menu-choices:hover  {
+
+    border: white solid 1px;
+    padding: 1px 3px 1px 3px;
+}
+#one.menu-choices:hover ~  :is(#ryu,#ken) {
+    top: 10%;
+  
+}
+#two.menu-choices:hover  ~  :is(#ryu,#ken){
+    top: 40% ;
+
+}
+#three.menu-choices:hover  ~  :is(#ryu,#ken){
+    top: 80%;
+ 
+}
+#two{
+    font-size: 2.7rem;
+}
+#ryu{
+    position: absolute;
+    top: 40%;
+    right:0 ;
+    transform: rotateY(180deg);
+
+}
+#ken{
+    position: absolute;
+    top: 40%;
+    left: 0;
+}
+
+
+
+

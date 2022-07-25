@@ -1,0 +1,9 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin:0;
+    background: linear-gradient(#060000 ,rgb(114, 0, 0));
+    color: white;
+    font-family: 'M PLUS Rounded 1c', Avenir Next, Helvetica, sans-serif;
+}
