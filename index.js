@@ -47,6 +47,10 @@ app.get("/hamad", (req, res) => {
   res.send("hamad is saleb")
 })
 
+app.get("/ammar", (req, res) => {
+  res.send("ammar is pussy as fuck")
+})
+
 app.get("/tests", (req, res) => {
   tests.testUserRegistration({ username: "ammar", password: "123" });
   res.send("all tests passed")
