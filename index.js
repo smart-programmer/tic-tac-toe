@@ -17,6 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', (req, res) => {
+  // https://www.geeksforgeeks.org/express-js-res-sendfile-function/
   res.sendFile("static/html/test.html", { root: path.join(__dirname) },
     err => {
       console.log(err)
@@ -29,6 +30,7 @@ app.get('/register', (req, res) => {
       console.log(err)
     })
 })
+
 
 app.post("/register", (req, res) => {
   //save user credentials

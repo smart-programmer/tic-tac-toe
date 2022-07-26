@@ -2,6 +2,8 @@ const https = require('https')
 var querystring = require('querystring');
 
 
+// https://stackoverflow.com/questions/6158933/how-is-an-http-post-request-made-in-node-js
+
 function mockRegisterUser(userObj) {
   // construct post payload
   var postPayload = querystring.stringify({
