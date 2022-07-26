@@ -2,3 +2,23 @@ body , html{
     background-color:rgb(29, 30, 34) ;
     color: white;
 }
+
+.border-line1{
+    height:100%;
+    width:1%;
+    background-color: red;
+    position: absolute;
+    top:0;
+    right: 33%;
+}
+.border-line2{
+    height:100%;
+    width:1%;
+    background-color: red;
+    position: absolute;
+    top:0;
+    right: 66%;
+}
+.bor{
+    position: relative;
+}
