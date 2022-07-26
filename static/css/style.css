@@ -3,22 +3,7 @@ body , html{
     color: white;
 }
 
-.border-line1{
-    height:100%;
-    width:1%;
-    background-color: red;
-    position: absolute;
-    top:0;
-    right: 33%;
+td{
+    border: 2px solid white;
 }
-.border-line2{
-    height:100%;
-    width:1%;
-    background-color: red;
-    position: absolute;
-    top:0;
-    right: 66%;
-}
-.bor{
-    position: relative;
-}
+
