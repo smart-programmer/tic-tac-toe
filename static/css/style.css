@@ -6,4 +6,46 @@ body , html{
 td{
     border: 2px solid white;
 }
+tr{
+    height: 20vh; 
+}
 
+.table{
+    width: 30vw;  
+}
+@media screen and (max-width: 1000px) {
+    .table{
+        width: 35vw;  
+    }
+    tr{
+        height: 15vh;
+    }
+
+}
+@media screen and (max-width: 850px) {
+    .table{
+        width: 40vw;  
+    }
+    tr{
+        height: 13vh;
+    }
+
+}
+@media screen and (max-width: 600px) {
+    .table{
+        width: 45vw;  
+    }
+    tr{
+        height: 13vh;
+    }
+
+}
+@media screen and (max-width: 450px) {
+    .table{
+        width: 60vw;  
+    }
+    tr{
+        height: 15vh;
+    }
+
+}
