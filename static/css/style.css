@@ -1,81 +1,120 @@
 body , html{
     background-color:rgb(29, 30, 34) ;
     color: white;
-}
-
-td{
-    border: solid white;
-    border-width:6px !important; 
-}
-tr{
-    height: 20vh; 
-}
-
-.table{
-    width: 25vw ;  
-}
-
-@media screen and (max-width: 1000px) {
-    .table{
-        width: 35vw;  
-    }
-    tr{
-        height: 15vh;
-    }
-    td{
-        min-width: calc(35vw/3) ;  
-
-    }
-}
-@media screen and (max-width: 850px) {
-    .table{
-        width: 40vw;  
-    }
-    tr{
-        height: 13vh;
-    }
-    td{
-        min-width: calc(40vw/3);  
-
-    }
 
 }
-@media screen and (max-width: 600px) {
-    .table{
-        width: 45vw;  
-    }
-    tr{
-        height: 13vh;
-    }
-    td{
-        min-width: calc(45vw/3) ;  
-
-    }
+*, *::after, *::before {
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --cell-size: 150px;
+    --mark-size: calc(var(--cell-size) * .7);
+  }
+  @media screen and (max-width: 680px) {
+    :root {
+        --cell-size: 100px;
+        --mark-size: calc(var(--cell-size) * .7);
+      }
+    
 }
-@media screen and (max-width: 450px) {
-    .table{
-        width: 60vw;  
-    }
-    tr{
-        height: 15vh;
-    }
-    td{
-        min-width: calc(60vw/3) ;  
-
-    }
-
-}
-.input-placement{
-   
-    color: red ;
+  .board {
+    width: 70%;
+    height: 60vh;
+    display: grid;
     justify-content: center;
-    font-size: 5rem;
-    font-weight: bold;
-
-}
-
-td{
-    text-align: center;
-    cursor:pointer ;
-    min-width: calc(25vw/3);  
-}
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto)
+  }
+  
+  .cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 4px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .cell:first-child,
+  .cell:nth-child(2),
+  .cell:nth-child(3) {
+    border-top: none;
+  }
+  
+  .cell:nth-child(3n + 1) {
+    border-left: none;
+  }
+  
+  .cell:nth-child(3n + 3) {
+    border-right: none;
+  }
+  
+  .cell:last-child,
+  .cell:nth-child(8),
+  .cell:nth-child(7) {
+    border-bottom: none;
+  }
+  
+  .cell.x,
+  .cell.o {
+    cursor: not-allowed;
+  }
+  
+  .cell.x::before,
+  .cell.x::after,
+  .cell.o::before {
+    background-color: black;
+  }
+  
+  .board.x .cell:not(.x):not(.o):hover::before,
+  .board.x .cell:not(.x):not(.o):hover::after,
+  .board.o .cell:not(.x):not(.o):hover::before {
+    background-color: lightgrey;
+  }
+  
+  .cell.x::before,
+  .cell.x::after,
+  .board.x .cell:not(.x):not(.o):hover::before,
+  .board.x .cell:not(.x):not(.o):hover::after {
+    content: '';
+    position: absolute;
+    width: calc(var(--mark-size) * .15);
+    height: var(--mark-size);
+  }
+  
+  .cell.x::before,
+  .board.x .cell:not(.x):not(.o):hover::before {
+    transform: rotate(45deg);
+  }
+  
+  .cell.x::after,
+  .board.x .cell:not(.x):not(.o):hover::after {
+    transform: rotate(-45deg);
+  }
+  
+  .cell.o::before,
+  .cell.o::after,
+  .board.o .cell:not(.x):not(.o):hover::before,
+  .board.o .cell:not(.x):not(.o):hover::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .cell.o::before,
+  .board.o .cell:not(.x):not(.o):hover::before {
+    width: var(--mark-size);
+    height: var(--mark-size);
+  }
+  
+  .cell.o::after,
+  .board.o .cell:not(.x):not(.o):hover::after {
+    width: calc(var(--mark-size) * .7);
+    height: calc(var(--mark-size) * .7);
+    background-color:rgb(29, 30, 34);
+  }
