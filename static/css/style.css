@@ -1,10 +1,5 @@
 body , html{
     background-color:#242132 ;
-    /* background-image:url(https://t4.ftcdn.net/jpg/02/00/68/69/360_F_200686969_GJ7zbz2qaNIE4dyHSbZkQXvNPzRuwlr3.jpg); */
-    /* background-size: a; */
-    /* background-repeat: no-repeat; */
-    /* background-size:cover ; */
-
 }
 *, *::after, *::before {
     box-sizing: border-box;
@@ -158,4 +153,14 @@ body , html{
     margin-top: 25px;
     font-family: 'Roboto Mono', monospace;
     color: white !important;
+  }
+  .x-color-text{
+    color: #746cfe !important ;
+    font-size: 3rem !important;
+    font-weight: bold;
+  }
+  .o-color-text{
+    color: #ae8cfa !important;
+    font-size: 3rem !important;
+    font-weight: bold;
   }

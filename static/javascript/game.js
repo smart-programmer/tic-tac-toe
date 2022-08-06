@@ -8,6 +8,7 @@ var playerTurn = false;
 var playerTurn = true;
 borderPosition.forEach(cell=> {
     cell.addEventListener('click', (e)=> {
+      whoIsPLaying();
       hoverBorder();
       swapTurns();
       whoIsTurn();
@@ -78,4 +79,15 @@ const winChances=[
   [0,4,8],
   [2,4,6]
 ]
+
+const playerTurnTxt = document.querySelector('.player-turn-now');
+const whoIsPLaying  = ()=>{
+      if (!playerTurn) {
+        playerTurnTxt.innerHTML ='Player *<span class="x-color-text"> X </span>* Turn';
+      } else {
+        playerTurnTxt.innerHTML ='Player *<span class="o-color-text"> O </span>* Turn';
+
+      }
+}
+
 

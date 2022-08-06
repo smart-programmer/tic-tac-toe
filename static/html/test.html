@@ -21,7 +21,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                 <a class="navbar-brand" href="#">
-                    <img src="/images/pngegg.png" alt="" width="50" height="50" class="mt-2">
+                    <img src="../images/pngegg.png" alt="" width="50" height="50" class="mt-2">
                 </a>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -32,10 +32,11 @@
                     </li>
 
                 </ul>
-                <form class="d-flex" role="search">
-                    <button class="btn btn-outline-success me-3" type="submit">Sign in</button>
-                    <button class="btn btn-outline-success" type="submit">Sign up</button>
-                </form>
+                <div class="d-flex">
+                    <a href="./login.html"><button class="btn btn-outline-success me-3">Sign
+                            in</button></a>
+                    <a href="./register.html"><button class="btn btn-outline-success">Sign up</button></a>
+                </div>
             </div>
         </div>
     </nav>
@@ -43,7 +44,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-6 title w-auto">
-                <p class="h1"> Player *X* Turn</p>
+                <p class="player-turn-now h1"> Player *<span class="x-color-text"> X </span>* Turn</p>
             </div>
         </div>
 
