@@ -172,16 +172,20 @@ body , html{
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  display: none;
+  /* display: none; */
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  display: flex;
   font-size: 3rem;
-  
-  transition: all 1s ease ;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.6s ease;
 }
 .wining-message-display{
-  display: flex;
+  visibility: visible;
+  opacity: 1;
 
 }
 .btn-bd-primary {

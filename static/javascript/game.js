@@ -112,8 +112,10 @@ function displaywinierText (){
 
 
 
-  
 }
+
+
+
 function restart(){
   borderPosition.forEach(cell=> {
   cell.classList.remove(X_CLASS)
