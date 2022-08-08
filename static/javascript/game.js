@@ -2,30 +2,34 @@ const borderPosition = document.querySelectorAll('[data-cell]');
 
 const X_CLASS= 'x'
 const O_CLASS= 'o'
-var playerTurn = false;
-
-
 var playerTurn = true;
-borderPosition.forEach(cell=> {
+
+ const gameLoop=borderPosition.forEach(cell=> {
     cell.addEventListener('click', (e)=> {
-      whoIsPLaying();
-      hoverBorder();
-      swapTurns();
-      whoIsTurn();
       place(e);
 
-      console.log(checkWin());
-      if (checkWin()) {
-        // winner text
-      }
     },{once:true}); // once mean only you can click one time
      });
 
      function place(e) {
       const cell = e.target;
-        cell.classList.add(currentClass)
-       
+      if( cell.classList.contains(currentClass)) return 
+      whoIsPLaying();
+      hoverBorder();
+      swapTurns();
+      whoIsTurn();
+
+        cell.classList.add(currentClass) // display player shape
+
+
+        if (checkWin()) {
+          // winner text
+          winnerText();
+          displaywinierText();
+        }
      }
+
+
      function whoIsTurn() {
       if (playerTurn) {
         currentClass=O_CLASS;
@@ -42,6 +46,7 @@ borderPosition.forEach(cell=> {
      const board = document.getElementById('board');
 
      const hoverBorder = ()=>{
+      console.log(playerTurn);
       if (playerTurn) {
         board.classList.remove('x');
         board.classList.add('o');
@@ -89,5 +94,38 @@ const whoIsPLaying  = ()=>{
 
       }
 }
+const winierTextMessage = document.querySelector('[data-wining-message]');
+
+function winnerText (){
+  if (!playerTurn) {
+    winierTextMessage.innerHTML="X`s Wins"
+    
+  } else {
+    winierTextMessage.innerHTML="O`s Wins"
+
+  }
+}
+
+const displayWinnerItems= document.getElementById('winner-text');
+function displaywinierText (){
+  displayWinnerItems.classList.add('wining-message-display')
 
 
+
+  
+}
+function restart(){
+  borderPosition.forEach(cell=> {
+  cell.classList.remove(X_CLASS)
+  cell.classList.remove(O_CLASS)
+  displayWinnerItems.classList.remove('wining-message-display')
+  cell.removeEventListener('click',place);
+  cell.addEventListener('click',place,{once:true});
+  playerTurn = false;
+   
+   whoIsPLaying();
+      hoverBorder();
+      swapTurns();
+      whoIsTurn();
+  })
+}
