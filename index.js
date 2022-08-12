@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('/register', (req, res) => {
+app.get('/register(.html)?', (req, res) => {
   res.sendFile("static/html/register.html", { root: root },
     err => {
       console.log(err)
@@ -55,7 +55,7 @@ app.post("/register", (req, res) => {
   res.redirect("/login")
 })
 
-app.get("/login", (req, res) => {
+app.get("/login(.html)?", (req, res) => {
   res.sendFile("static/html/login.html", { root: root },
     err => {
       console.log(err)
@@ -79,9 +79,9 @@ app.post("/login", (req, res) => {
 
 
 //secret routes 🌚
-app.get("/hamad", (req, res) => {
-  res.send("hamad is saleb")
-})
+// app.get("/hamad", (req, res) => {
+//   res.send("hamad is saleb")
+// })
 
 app.get("/tests", (req, res) => {
   tests.testUserRegistration({ username: "ammar", password: "123" });
