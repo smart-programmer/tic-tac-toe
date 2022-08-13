@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
   // https://www.geeksforgeeks.org/express-js-res-sendfile-function/
-  res.sendFile("static/html/test.html", { root: root },
+  res.sendFile("static/html/tic-tac-toe.html", { root: root },
     err => {
       console.log(err)
     })
@@ -78,10 +78,14 @@ app.post("/login", (req, res) => {
 })
 
 
-//secret routes 🌚
-// app.get("/hamad", (req, res) => {
-//   res.send("hamad is saleb")
-// })
+// secret routes 🌚
+app.get("/hamad", (req, res) => {
+  res.send("hamad is saleb")
+})
+
+app.get("/ammar", (req, res) => {
+  res.send("ammar is pussy")
+})
 
 app.get("/tests", (req, res) => {
   tests.testUserRegistration({ username: "ammar", password: "123" });

@@ -14,6 +14,7 @@ var playerTurn = true;
      function place(e) {
       const cell = e.target;
       if( cell.classList.contains(currentClass)) return 
+      DrawCounter++;
       whoIsPLaying();
       hoverBorder();
       swapTurns();
@@ -26,6 +27,11 @@ var playerTurn = true;
           // winner text
           winnerText();
           displaywinierText();
+        } 
+        if(DrawCounter==9 && !checkWin()){
+          DrawTextMessage();
+          displaywinierText();
+
         }
      }
 
@@ -46,7 +52,6 @@ var playerTurn = true;
      const board = document.getElementById('board');
 
      const hoverBorder = ()=>{
-      console.log(playerTurn);
       if (playerTurn) {
         board.classList.remove('x');
         board.classList.add('o');
@@ -105,13 +110,13 @@ function winnerText (){
 
   }
 }
+function DrawTextMessage (){
+  winierTextMessage.innerHTML="Draw !!!"
+}
 
 const displayWinnerItems= document.getElementById('winner-text');
 function displaywinierText (){
   displayWinnerItems.classList.add('wining-message-display')
-
-
-
 }
 
 
@@ -129,5 +134,8 @@ function restart(){
       hoverBorder();
       swapTurns();
       whoIsTurn();
+      DrawCounter=0;
   })
 }
+
+let DrawCounter=0;

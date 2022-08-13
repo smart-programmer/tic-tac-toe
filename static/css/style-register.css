@@ -2,6 +2,11 @@ body , html{
     background-color:#242132 ;
 
 }
+
+.reg-title{
+  color:white;
+
+}
 .btn:hover{
     background-color: #746cfe!important;
     --bs-btn-hover-color: var(#746cfe) ;
@@ -58,11 +63,27 @@ body , html{
     background: linear-gradient(169deg, rgba(44,81,241,1) 14%, rgba(41,70,195,1) 18%, rgba(23,47,176,1) 29%, rgba(27,26,134,1) 42%, rgba(58,6,162,1) 61%, rgba(52,26,105,1) 85%);
 
   }
-  @media screen and (max-width: 450px) {
+  #font {
+    font-size: 1rem !important;
+    padding-left: 2rem!important;
+    padding-right: 2rem!important;
+    }
+  @media screen and (max-width: 452px) {
     .placeholder-float{
         font-size:0.7rem!important;
       }
       .btn-resize{
         width:  5rem!important;
       }
+      .reg-title{
+        font-size: 1.5rem;
+      }
+  }
+  @media screen and (max-width: 566px) {
+    #font {
+    font-size: 0.8rem !important;
+    /* padding-left: 0 !important;
+    padding-right: 0 !important; */
+    }
+
   }
